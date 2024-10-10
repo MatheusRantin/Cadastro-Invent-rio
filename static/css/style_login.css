@@ -1,0 +1,28 @@
+.item_form{
+    margin-bottom:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_form input{
+    width: 50%;
+    height: 40px;
+}
+body {
+    display: grid;
+    place-items: center;
+}
+.content-img{
+    margin-bottom: 20px;
+}
+#btn_form{
+    text-align: center;
+    width: 20%;
+}
+#content-img-pokemon{
+    max-width:900px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+   
+}
