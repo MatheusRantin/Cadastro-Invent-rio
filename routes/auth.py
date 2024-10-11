@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, request, Blueprint, session
-from serverDatabase import getUser
+from serverDatabase import getUser, getNameUser
 
 auth_bp = Blueprint('auth', __name__, template_folder='templates')
     
@@ -14,10 +14,11 @@ def checkUser():
         if validation == False:
             return redirect('/auth')
         elif validation == True:
-            print(validation)
-            session['user']= email
+            name = getNameUser(email)
+            session['user']= name
             session['token']='0000'
 
+            
             return redirect('/user')
 
     return render_template('login.html')
