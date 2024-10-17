@@ -16,39 +16,29 @@
         </div>
     </nav>
     <h1>{{name}}</h1>
+    <form action="/user/cad"><button>Novo Cadastro</button></form>
     <section id="table-book">
         <div id="content-table">
             <table class="table table-striped" style=" border-color: black; border-style: solid; border-width:1px; border-radius:10%;">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Livro</th>
-                        <th scope="col">Data de Retirada</th>
-                        <th scope="col">Data de Devolução</th>
-                        <th scope="col">Cliente</th>
+                       
+                        <th scope="col">Local</th>
+                        <th scope="col">Computadores</th>
+                        <th scope="col">Monitores</th>
+                        <th scope="col">Impressoras</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for dado in lista_locais %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td><a href="#">Mark</a></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>teste</td>
+                       
+                        <td>{{ dado[1] }}</td>
+                        <td>{{dado[3]}}</td>
+                        <td>{{dado[4]}}</td>
+                        <td>{{dado[2]}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>teste</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>teste</td>
-                    </tr>
+                    {% endfor %}
                    
                 </tbody>
             </table>         

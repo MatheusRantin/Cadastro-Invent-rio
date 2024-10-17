@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade por Local e Tipo de Item</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Quantidade por Local e Tipo de Item</h1>
+
+        <!-- Formulário para cadastrar novo itens_locais -->
+        <h2 class="mt-4">Cadastrar Novo Item por Local</h2>
+        <form action="/user/add_item_local" method="POST">
+            <div class="form-group">
+                <label for="local_id">ID do Local</label>
+                <input type="number" class="form-control" id="local_id" name="local_id" required>
+            </div>
+            <div class="form-group">
+                <label for="item_id">ID do Item</label>
+                <input type="number" class="form-control" id="item_id" name="item_id" required>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+
+        <h2 class="mt-4">Locais Disponíveis</h2>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>ID do Local</th>
+                    <th>Nome do Local</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for local in locais %}
+                <tr>
+                    <td>{{ local[0] }}</td>  <!-- ID do local -->
+                    <td>{{ local[1] }}</td>  <!-- Nome do local -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2 class="mt-4">Itens Disponíveis</h2>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>ID do Item</th>
+                    <th>Nome do Item</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item[0] }}</td>  <!-- ID do item -->
+                    <td>{{ item[1] }}</td>  <!-- Nome do item -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>ID do Local</th>
+                    <th>Local</th>
+                    <th>Impressora</th>
+                    <th>Computador</th>
+                    <th>Monitor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in dados %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

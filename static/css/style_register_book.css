@@ -5,3 +5,24 @@
     height: auto;
    
 }
+#conter-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    padding: 50px;
+
+}
+section #conter-form{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-form{
+    text-align: center;
+    margin-bottom: 10px;
+}
