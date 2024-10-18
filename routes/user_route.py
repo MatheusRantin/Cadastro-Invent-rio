@@ -25,7 +25,9 @@ def addItemLocal():
     qnt = request.form.get('quantidade')
 
     requestDb = registerItem_locais(local, item, qnt)
-    return redirect('/', vf = requestDb)
+    if requestDb == True:
+        return redirect(url_for('user.home'))
+    
 
 
 @user_bp.before_request

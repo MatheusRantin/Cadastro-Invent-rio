@@ -79,6 +79,9 @@ def getIdItems():
 def registerItem_locais(id_local, id_item, quantidade):
     cur = conn.cursor()
     SQL = f"INSERT INTO itens_locais VALUES(DEFAULT, '{id_item}', '{id_local}', {quantidade}) "
-    cur.execute(SQL)
-    conn.commit()
-    return True
+    try:
+        cur.execute(SQL)
+        conn.commit()
+        return True
+    except:
+        return False
